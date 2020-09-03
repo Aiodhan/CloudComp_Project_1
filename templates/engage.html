@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename="content/engage.css") }}" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" id="logo" href="{{ url_for('home') }}">
+
+                <span class="ml-3 font-weight-bold">get:Hyre</span>
+            </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbar4">
+                <ul class="navbar-nav mr-auto pl-lg-4">
+                    <li class="nav-item px-lg-2 active"> <a class="nav-link" href="{{ url_for('home') }}"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>About</a> </li>
+
+                    <li class="nav-item px-lg-2 dropdown d-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="d-inline-block d-lg-none icon-width"><i class="far fa-caret-square-down"></i></span>Products
+                            <!---<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>--->
+                        </a>
+                        <div class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="{{ url_for('engage') }}">Engage</a>
+                            <a class="dropdown-item" href="{{ url_for('journy') }}">Journy</a>
+                            <a class="dropdown-item" href="{{ url_for('ala') }}">&Aacute;la</a>
+                        </div>
+                    </li>
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href="{{ url_for('blog') }}"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>Blog</a> </li>
+
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href="{{ url_for('contact') }}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-envelope"></i></span>Contact</a> </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="body-wrapper col-lg-12 p-0">
+        <div class="container col-12 col-lg-12 col-sm-12 col-md-12 col-xs-12 px-5 my-5 bg-custom justify-content-center" id="pg1">
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row justify-content-center my-5">
+                <div class="col-4 col-lg-4 col-sm-6 col-md-6 col-xs-6 mt-5 mb-5 mr-5 pt-5" id="ehead">
+                    <h1 class="text-center text-white mb-5 head-e">Engage: Your Virtual Hiring Assistant</h1>
+                    <hr class="homepage-line" />
+                    <p class="lead text-center head-e-p">
+                        Engage is your virtual HR assistant which seamlessly handles your
+                        pre hire processes, onboarding and facilitates continued support throughout
+                        the candidate's journey with your organisation
+                    </p>
+                    <p class="text-center mt-5">
+                        <a href="#" class="btn btn-lg demo-e">Request a Demo</a>
+                    </p>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-xs-6 pl-1 pt-2" id="vid">
+                    <div class="container">
+                        <div class="container-fluid ml-5 mt-1">
+                            <video class="video border shadow shadow-sm" width="229" preload="auto" autoplay muted loop>
+                                <source src="{{ url_for('static', filename="img/final.mp4") }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container col-12" id="pg2">
+            <div class="container col-10 mb-5 p-5">
+
+                <h1 class="text-center cust-text  mb-5"> With Engage you can...</h1>
+                <h1 class="text-center cust-text  mb-5"></h1>
+
+                <div class="card-deck justify-content-center" id="eyus">
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card shadow p-3 mb-5">
+                                <div class="row">
+                                    <h3 class="text-center col-8 tc-h">Automate your Hiring Process</h3>
+                                    <span class="col"><img class="img-fluid" src="/static/img/process.png" /></span>
+                                </div>
+                                <hr class="line-1" />
+                                <div class="card-body pt-2 pb-2">
+
+                                    <p class="card-text lead p-0">
+                                        Engage provides seamless conversational
+                                        support built on top-off the line AI & ML algorithms. It strives to provide
+                                        an effortless experience on both sides of the table.
+                                    </p>
+                                    <a href="#" type="button" class="btn btn-link">Read More --></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" id="ec2">
+                            <div class="card shadow p-3">
+                                <div class="row">
+                                    <h3 class="text-center col-8 tc-h">Let Engage Prep the candidate</h3>
+                                    <span class="col"><img class="img-fluid" src="/static/img/mobile-app.png" /></span>
+                                </div>
+                                <hr class="line-1" />
+                                <div class="card-body pt-2 pb-2">
+                                    <p class="card-text lead p-0">
+                                        Engage preps the candidate for the
+                                        upcoming interview/process. Addresses any queries the candidate might
+                                        have about the role or the company
+                                    </p>
+                                    <a href="#" type="button" class="btn btn-link">Read More --></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" id="ec3">
+                            <div class="card shadow p-3">
+                                <div class="row">
+                                    <h3 class="text-center col-8 tc-h">Ensure Business Continuity</h3>
+                                    <span class="col"><img class="img-fluid" src="/static/img/continuous.png" /></span>
+                                </div>
+                                <hr class="line-1" />
+                                <div class="card-body pt-2 pb-2">
+                                    <p class="card-text lead p-0">
+                                        Engage integrates seamlessly into your day to day.
+                                        Provides a plethora of features to track performance and help your assets grow with the company
+                                    </p>
+                                    <a href="#" type="button" class="btn btn-link">Read More --></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-lg-4 col-sm-6" id="ec4">
+                            <div class="card shadow p-3">
+                                <div class="row">
+                                    <h3 class="text-center col-8 tc-h">Onboard Faster</h3>
+                                    <span class="col"><img class="img-fluid" src="/static/img/leader.png" /></span>
+                                </div>
+                                <hr class="line-1" />
+                                <div class="card-body pt-2 pb-2">
+                                    <p class="card-text lead p-0">
+                                        Onboarding can be hectic.
+                                        Engage puts the employee at ease by providing contiunous support and guidance throught the coroprate rigamarole
+                                    </p>
+                                    <a href="#" type="button" class="btn btn-link">Read More --></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6" id="ec5">
+                            <div class="card shadow p-3">
+                                <div class="row">
+                                    <h3 class="text-center col-8 tc-h">Evaluate Early</h3>
+                                    <span class="col"><img class="img-fluid" src="/static/img/time.png" /></span>
+                                </div>
+                                <hr class="line-1" />
+                                <div class="card-body pt-2 pb-2">
+                                    <p class="card-text lead p-0">
+                                        Engage is smart. It starts building on a psych profile through interesting questions.
+                                        This is further leveraged by Journy and Ala to generate a complete psych profile.
+                                    </p>
+                                    <a href="#" type="button" class="btn btn-link">Read More --></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-12" id="pg3">
+            <div class="container mt-5" id="pre-hire">
+                <div class="row justify-content-center">
+                    <h1 class="text-center text-red border-bottom">Pre-hire</h1>
+
+                    <h1 class="p-2 text-center text-d-2" id="ph-2">
+                        Engage automates your pre hire processes and starts its
+                        evaluation based on your best fit criteria.
+                    </h1>
+                </div>
+
+                <div class="card-deck  mt-5">
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/classification.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-red">Process Scheduling</h4>
+                            <hr />
+                            <p class="card-text">
+                                Engage reaches out to the candidate, inititates a conversation and its AI algorithms automatically schedules
+                                further processes owing to your flexibility
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/seller.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-red">Agent Handling</h4>
+                            <hr />
+                            <p class="text-body">
+                                Engage is NLP powered and conversational in nature to the extent of its knowledge base.
+                                Utilising this, Engage makes sure the candidate is well prepped and is clear of the opportunity.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-100 d-none d-sm-block d-md-none mb-2"><!-- wrap every 2 on sm--></div>
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/brain.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-red">Psychometric evaluation</h4>
+                            <hr />
+                            <p class="text-body text-body-color">
+                                Engage's bite sized psychometric evaluation lays the foundation for further processes.
+                                Its unique conversational nature puts the candidate in his own element resulting in an
+                                accurate picture of his psyche.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/classification.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-red">Data Validation</h4>
+                            <hr />
+                            <p class="text-body text-body-color">
+                                Engage automates the data validation process through quick polls.
+                                It starts building a profile and arrives at a priori relevancy score, making shortlisting effective at scale
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-12 mt-5 pt-4 pb-5" id="pg4">
+            <div class="container mt-5 mb-5" id="onboarding">
+                <div class="row justify-content-center">
+                    <h1 class="text-center text-cyan border-bottom">Onboarding</h1>
+                    <h1 class="p-2 text-center text-d-2">
+                        Onboarding can last weeks !. Engage does it at a fraction of the time,
+                        with high intent on experience and functionality
+                    </h1>
+                </div>
+
+
+                <div class="card-deck mt-5">
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/process.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-cyan">Guided Tours</h4>
+                            <hr />
+                            <p class="text-body">
+                                Engage delivers guided tours built on your onboarding
+                                processes and facilitates a smooth transition into your work culture
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/web-traffic.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-cyan">HRMS Walkthrough</h4>
+                            <hr />
+                            <p class="text-body">
+                                Engage calls for a faster and efficient user adoption for your HRMS.
+                                Engage achieves this by delivering regular snippets on how-to's and when-to's regarding your HRMS
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-100 d-none d-sm-block d-md-none mb-2"><!-- wrap every 2 on sm--></div>
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/question.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-cyan">Query resolution</h4>
+                            <hr />
+                            <p class="text-body">
+                                Engage will be the go to solution for any relevant query resolution during the preiod of onboarding
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/reminder.png" style="width:120px; height:120px;" />
+
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center text-cyan">Meeting Reminders</h4>
+                            <hr />
+                            <p class="text-body">
+                                The initial orientations and business meetings do make up a tight schedule.
+                                Engage's unique reminder feature picks up on the onboarding schedule and delivers timely reminders
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="container col-12 mb-5" id="pg5">
+            <div class="container mt-5" id="post-hire">
+
+                <div class="row justify-content-center">
+                    <h1 class="text-center text-blue border-bottom">Post-Hire</h1>
+                    <h1 class="p-2 text-center text-d-2">
+                        The Journey has just started for Engage. It now morphs into
+                        a smart HR assistant laying down the framework for a long nurtured experience
+                    </h1>
+                </div>
+
+
+                <div class="card-deck mt-5">
+
+                    <div class="card shadow border-0">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/review.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center border-bottom text-blue">Polls</h4>
+
+                            <p class="text-body">
+                                Polls is a unique feature which democratices your decision
+                                processes and calls for an active engagement from your employees
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/algorithm.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center border-bottom text-blue">HRMS Interation</h4>
+                            <p class="text-body">
+                                Integrates well with your HRMS and gives it the added conversational support
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-100 d-none d-sm-block d-md-none mb-2"><!-- wrap every 2 on sm--></div>
+                    <div class="card shadow border-0">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/feedback.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center border-bottom text-blue">Feedback Engine</h4>
+                            <p class="text-body">
+                                Engage collects valuable feedback from your employees and builds
+                                on this data to enable you deliver defining moments for your workforce
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0">
+                        <div class="d-block pt-4">
+                            <img class="rounded mx-auto d-block" src="/static/img/shout.png" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center border-bottom text-blue">Announcements</h4>
+
+                            <p class="text-body">
+                                Your Townhalls, Corporate outings, Cultural Events , Training and Seminars
+                                are now events to look forward to
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container col-12" id="pg6">
+
+            <div class="d-block my-5"><h1></h1></div>
+            <div class="container pt-5 mt-5"><h1 class="text-center">FAQ'S</h1></div>
+
+            <div class="container col-8 justify-content-center my-5 pb-5" id="faq-e">
+
+                <div class="d-block text-align-left">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq1" aria-expanded="false" aria-controls="collapseExample">
+                            1. How does Engage reach out to the candidates ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq1">
+                        <div class="card card-body" id="faq1-p">
+                            Engage integrates into your ATS and automatically makes contact with the candidates over WhatsApp.
+                            Incase of no existing ATS, you can upload the candidates information spreadsheet here.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq2" aria-expanded="false" aria-controls="collapseExample">
+                            2. Can I customise my greeting messages ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq2">
+                        <div class="card card-body">
+                            Absolutely, your greeting messages and shortlisting notifications can be customised to represent your
+                            company's identity. Login to the dashboard and under Engage tab click on customise.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq3" aria-expanded="false" aria-controls="collapseExample">
+                            3. How can I upload my candidate file incase of no ATS?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq3">
+                        <div class="card card-body">
+                            You can upload a CSV, Excel or a spreadsheet file on a continuous basis.
+                            Write to us at tech@gethyre.in to discuss ATS integrations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq4" aria-expanded="false" aria-controls="collapseExample">
+                            4. Can Engage evaluate for a candidate's fit ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq4">
+                        <div class="card card-body">
+                            Before Engage is deployed, we have a brief questionnaire for you to answer.
+                            Based on that Engage sends out relevant snippets to gather information and evaluate a best fit score.
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq5" aria-expanded="false" aria-controls="collapseExample">
+                            5. Does Engage evaluate the candidate on his psychometric abilities ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq5">
+                        <div class="card card-body border-0 border-top">
+                            Yes, psychometric evaluation is an integral part of Engage. We have a well researched questionnaire which
+                            calls for a comprehensive psychometric evaluation of the candidate. If you would like to include your own
+                            questions or are looking for selective personlaity traits, please write to us at partner@gethyre.in
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq6" aria-expanded="false" aria-controls="collapseExample">
+                            6. How are interviews scheduled ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq6">
+                        <div class="card card-body border-0 border-top">
+                            In your get:Hyre web dashboard, under the engage tab you are asked for your time slots.
+                            Engage uses this to negotiate an appropriate time with the candidate and schedule further processes.
+                            It then sends out reminder notifications prior to the interview
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq7" aria-expanded="false" aria-controls="collapseExample">
+                            5. Am I charged on the number of persons hired ?
+
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq7">
+                        <div class="card card-body border-0 border-top">
+                            No. you wouldn't be charged anything on a candidate's employment confirmation.
+                            For more information pricing click here
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq8" aria-expanded="false" aria-controls="collapseExample">
+                            8. Can I upgrade my plan?
+
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq8">
+                        <div class="card card-body">
+
+                            Yes, you can. We encourage you to try our advanced version as it includes a comprehensive solution set.
+                            Go to the pricing tab in your dashboard after logging in.
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq9" aria-expanded="false" aria-controls="collapseExample">
+                            9. Can I cancel or put my current plan on hold ?
+
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq9">
+                        <div class="card card-body">
+                            You definitely can put your current plan on hold. You can view ongoing campaigns in the
+                            overview tab of your dashboard. You can also cancel your plan whenever, but you do have a tough
+                            mandatory exit interview to go through.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq10" aria-expanded="false" aria-controls="collapseExample">
+                            10. What happens to the uploaded candidate information ?
+
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq10">
+                        <div class="card card-body">
+                            Your information is confidential and is stored in our secure databases online.
+                            At no point are we authorised to sell or duplicate your information.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq11" aria-expanded="false" aria-controls="collapseExample">
+                            11. Does Engage verify the candidates information ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq11">
+                        <div class="card card-body">
+                            Engage has a built in data validation tool which saves you a lot of time.
+                            You can view the status of all the candidates under the visualisation tab in your dashboard.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq12" aria-expanded="false" aria-controls="collapseExample">
+                            12. How can I shortlist candidates ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq12">
+                        <div class="card card-body">
+
+                            The comprehensive prehire suite of engage  includes fit score,
+                            availability, pyschometric evaluation and data validation. All this is present under the
+                            visualisation tab which shows you a graph view and a candidate view.
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-block">
+                    <p>
+                        <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq13" aria-expanded="false" aria-controls="collapseExample">
+                            13. Can I shortlist candidates automatically ?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="faq13">
+                        <div class="card card-body">
+                            Yes, you can pre-define your benchmarks on various criteria to shortlist automatically.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container p-3" id="empty">
+            <div class="row"></div>
+            <div class="d-block text-center mt-3"> <a href="#" class="btn btn-lg demo-e">Request a Demo</a></div>
+        </div>
+
+        <div class="container col-12 footer-style mt-5 mb-0" id="footer">
+            <div class="container p-5">
+                <div class="row">
+                    <div class="col-sm role col-md col-xs">
+                        <table class="table table-borderless text-white">
+                            <tr><th class="text-red-foot-nav border-bottom">Solutions by Role</th></tr>
+                            <tr><td><a href="engage.html" class="card-link" id="ft-nav">Business Development</a></td></tr>
+                            <tr><td><a href="engage.html" class="card-link">Sales</a></td></tr>
+                            <tr><td><a href="engage.html" class="card-link">Inside Sales</a></td></tr>
+                            <tr><td><a href="engage.html" class="card-link">Consulting</a></td></tr>
+                            <tr><td><a href="engage.html" class="card-link">Strategy</a></td></tr>
+                            <tr><td><a href="engage.html" class="card-link">Account Management</a></td></tr>
+                        </table>
+                    </div>
+                    <div class="col-sm col-md industry col-xs">
+                        <table class="table table-borderless text-white">
+                            <tr><th class="text-red-foot-nav border-bottom">Solutions by Industry</th></tr>
+                            <tr><td><a href="engage" class="card-link">Internet</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">IT</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">Advertising</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">BPO</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">Consulting</a></td></tr>
+                        </table>
+                    </div>
+
+
+                    <div class="col-sm col-md company col-xs">
+                        <table class="table table-borderless">
+                            <tr><th class="text-red-foot-nav border-bottom">Company</th></tr>
+                            <tr><td><a href="engage" class="card-link">About Us</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">Request a Demo</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">Partnership Program</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">Blog</a></td></tr>
+                            <tr><td><a href="engage" class="card-link">FAQ's</a></td></tr>
+                        </table>
+                    </div>
+                    <div class="col-sm col-md contact col-xs">
+                        <table class="table table-borderless">
+                            <tr><th class="text-red-foot-nav border-bottom">Contact</th></tr>
+                            <tr><td class="text-white"><span><i class="fas fa-phone mr-1"></i></span>+91 99587 24981</td></tr>
+                            <tr><td class="text-white"><span><i class="fas fa-at mr-1"></i></span>hello@gethyre.in</td></tr>
+                            <tr><td class="text-white"><span><i class="fas fa-location mr-1"></i></span>Hosted on the clouds of Google ;)</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

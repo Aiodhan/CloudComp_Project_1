@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<htmxl>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!---- <link rel="stylesheet" href="" /> --->
+
+        <link rel="stylesheet" href="{{ url_for('static', filename="layout.css") }}" />
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+        <!-- Material Design Bootstrap -->
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> -->
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
+            <div class="container nav">
+                <a class="navbar-brand d-flex align-items-center" id="logo" href="{{ url_for('home') }}">
+
+                    <span class="ml-3 font-weight-bold">get:Hyre</span>
+                </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbar4">
+                    <ul class="navbar-nav mr-auto pl-lg-4">
+                        <li class="nav-item px-lg-2 active"> <a class="nav-link" href="{{ url_for('home') }}"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="layout.html"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></i></span>About</a> </li>
+
+                        <li class="nav-item px-lg-2 dropdown d-menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-inline-block d-lg-none icon-width"><i class="far fa-caret-square-down"></i></span>Products
+                                <!---<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>--->
+                            </a>
+                            <div class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="{{ url_for('engage') }}">Engage</a>
+                                <a class="dropdown-item" href="{{ url_for('journy') }}">Journy</a>
+                                <a class="dropdown-item" href="{{ url_for('ala') }}">&Aacute;la</a>
+                            </div>
+                        </li>
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="{{ url_for('blog') }}"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>Blog</a> </li>
+
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="{{ url_for('contact') }}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-envelope"></i></span>Contact</a> </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            $(document).ready(function () {
+                if ($(window).width() > 991) {
+                    $('.navbar-light .d-menu').hover(function () {
+                        $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+                    }, function () {
+                        $(this).find('.sm-menu').first().stop(true, true).delay(120).slideUp(100);
+                    });
+                }
+            });
+        </script>
+
+        <div class="body-wrapper col-12 col-lg-12 col-sm-12 col-md-12 col-xs-12 p-0">
+            <div class="container col-12" id="pg1">
+                <div class="container flex-column col-12 col-lg-12 col-md-12 col-sm-12 container justify-content-center" id="homepage">
+                    <h3 class="text-center mb-5 mt-5"></h3>
+                    <h3 class="text-center mx-auto text-white mt-5" id="head-tag">AI Engineered Hiring Platform<br /> Powered By <span id="typeline" class="typewrite"></span></h3>
+                    <p class="lead text-center mx-auto w-50 mt-2" id="head-kicker">
+                        Leverage Conversational AI to recruit on proven performance metrics
+                        as opposed to past experience. Learn more on how to customize recruiting and hiring scenarios with us.
+                    </p>
+                    <hr class="my-2">
+                    <p class="text-center" id="demo">
+                        <a class="btn btn-lg text-center" href="#!" role="button" id="demo-home">Try Us Out !</a>
+                    </p>
+                    <canvas id="canvas" width="320px" height="300px"></canvas>
+                </div>
+            </div>
+
+            <script>
+                var canvas = document.getElementById("canvas");
+
+                ctx = canvas.getContext('2d');
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                var stars = [], // Array that contains the stars
+                    FPS = 80, // Frames per second
+                    x = 60, // Number of star
+                    mouse = {
+                        x: 0,
+                        y: 0
+                    };  // mouse location
+
+                // Push stars to array
+
+                for (var i = 0; i < x; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 1 + 1,
+                        vx: Math.floor(Math.random() * 50) - 25,
+                        vy: Math.floor(Math.random() * 50) - 25
+                    });
+                }
+
+                // Draw the scene
+
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    ctx.globalCompositeOperation = "lighter";
+
+                    for (var i = 0, x = stars.length; i < x; i++) {
+                        var s = stars[i];
+
+                        ctx.fillStyle = "#ff0000";
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+                        ctx.fill();
+                        ctx.fillStyle = '#ffffff';
+                        ctx.stroke();
+                    }
+
+                    ctx.beginPath();
+                    for (var i = 0, x = stars.length; i < x; i++) {
+                        var starI = stars[i];
+                        ctx.moveTo(starI.x, starI.y);
+                        if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+                        for (var j = 0, x = stars.length; j < x; j++) {
+                            var starII = stars[j];
+                            if (distance(starI, starII) < 150) {
+                                //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+                                ctx.lineTo(starII.x, starII.y);
+                            }
+                        }
+                    }
+                    ctx.lineWidth = 0.05;
+                    ctx.strokeStyle = '#FAFAFA';
+                    ctx.stroke();
+                }
+
+                function distance(point1, point2) {
+                    var xs = 0;
+                    var ys = 0;
+
+                    xs = point2.x - point1.x;
+                    xs = xs * xs;
+
+                    ys = point2.y - point1.y;
+                    ys = ys * ys;
+
+                    return Math.sqrt(xs + ys);
+                }
+
+                // Update star locations
+
+                function update() {
+                    for (var i = 0, x = stars.length; i < x; i++) {
+                        var s = stars[i];
+
+                        s.x += s.vx / FPS;
+                        s.y += s.vy / FPS;
+
+                        if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+                        if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+                    }
+                }
+
+                canvas.addEventListener('mousemove', function (e) {
+                    mouse.x = e.clientX;
+                    mouse.y = e.clientY;
+                });
+
+                // Update and draw
+
+                function tick() {
+                    draw();
+                    update();
+                    requestAnimationFrame(tick);
+                }
+
+                tick();
+
+                //document.body.style.background = "url(" + canvas.toDataURL() + ")";
+
+            </script>
+
+            <script>
+                function write(obj, sentence, i, cb) {
+                    if (i != sentence.length) {
+                        setTimeout(function () {
+                            i++;
+                            console.log("in timeout", i);
+                            obj.innerHTML =
+                                sentence.substr(0, i + 1) + ' <em aria-hidden="true"></em>';
+                            write(obj, sentence, i, cb);
+                        }, 50);
+                    } else {
+                        console.log(i);
+                        cb();
+                    }
+                }
+                function erase(obj, cb, i) {
+                    var sentence = obj.innerText;
+                    if (sentence.length != 0) {
+                        setTimeout(function () {
+                            sentence = sentence.substr(0, sentence.length - 1);
+                            console.log("in timeout", i);
+                            obj.innerText = sentence;
+                            erase(obj, cb);
+                        }, 18 / (i * (i / 10000000)));
+                    } else {
+                        obj.innerText = " ";
+                        cb();
+                    }
+                }
+                var typeline = document.querySelector("#typeline");
+
+                function writeerase(obj, sentence, time, cb) {
+                    write(obj, sentence, 0, function () {
+                        setTimeout(function () {
+                            erase(obj, cb);
+                        }, time);
+                    });
+                }
+
+                var sentences = [
+                    "Tensorflow.. ",
+                    "Rasa.. ",
+                    "NLP.. ",
+                    "Scikit.. ",
+                    "StanfordNLP.. "
+                ];
+
+                var counter = 0;
+                function loop() {
+                    var sentence = sentences[counter % sentences.length];
+                    writeerase(typeline, sentence, 1500, loop);
+                    counter++;
+                }
+
+                loop();
+            </script>
+
+
+            <div class="container col-12 mt-5 mb-5" id="pg2">
+
+                <div class="mt-5 p-4 container justify-content-center border-bottom" id="block-1">
+                    <h2 class="d-block text-center mt-2 mb-0 p-5 pb-0" id="b-h-1">
+                        Recruiting with Artificial Intelligence makes it <strong>10X</strong> efficient and yields an accurate prediction
+                        of future performance.
+                    </h2>
+                    <hr id="b-l-1" />
+                    <p class="d-flex text-body text-center ml-5 mr-5 pl-5 pr-5" id="b-b-1">
+                        Our Products enable an efficient framework, which builds on messaging platforms and
+                        domain specific performance metrics. It includes a unique grading system which evaluates
+                        for a candidate's fit accounting for the intangibles and his future performance
+                    </p>
+                </div>
+
+
+                <!---<img class="img-fluid block-img-1" alt="Responsive image" src="6602.jpg"> --->
+
+            </div>
+
+            <div class="container mt-1 mb-5 pt-5" id="pg3">
+
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-4 col-lg-4 col-sm-6 col-md-6 col-xs-6 mr-5 ml-5">
+
+                        <h4 class="text-center p-3" id="bg-head-1">Go beyond the Resumes</h4>
+                        <hr class="my-0 c-line" />
+                        <div class="card-body ">
+
+                            <p class="card-text cust-card">
+                                getHyre helps you can look beyond the resume and evaluates the candidate for his inherent qualitative abilities
+                                and initial fit.
+                            </p>
+
+                        </div>
+                        <div class="text-center">
+                            <a href="#!" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-lg-6 col-sm-6 col-md-6 col-xs-6">
+                        <img src="/static/img/3227455.jpg" class="img-fluid" />
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-6 col-lg-6 col-sm-6 col-md-6">
+                        <img src="/static/img/4026068.jpg" class="img-fluid" />
+                    </div>
+                    <div class="col-4 col-lg-4 col-sm-6 col-md-6 col-xs-6 justify-content-center">
+                        <h4 class="text-center pt-5 p-3" id="bg-head-2">Engaging hiring Experience</h4>
+                        <hr class="my-0 c-line" />
+                        <div class="card-body text-body">
+
+                            <p class="card-text cust-card">
+                                getHyre generates domain specific text and voice based
+                                adventures which rely on your business context. This puts the job in
+                                perspective while delivering an engaging hiring experience.
+                            </p>
+
+                        </div>
+
+                        <div class="text-center">
+                            <a href="#!" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+
+
+                    <!---<div class="w-100 d-none d-sm-block d-md-none mb-2"><!-- wrap every 2 on sm-->
+                </div>
+
+                <div class="row justify-content-center mt-5 mb-2">
+
+
+                    <div class="col-4 col-lg-4 col-sm-6 col-md-6 col-xs-6 justify-content-center">
+
+                        <h4 class="text-center pt-5 p-3" id="bg-head-3">Automate to Save on Time</h4>
+                        <hr class="my-0 c-line" />
+                        <div class="card-body text-body">
+
+                            <p class="card-text cust-card">
+
+                                getHyre allows you to design and augment your recruitment process. getHyre then
+                                deploys your hiring journeys at scale! We also integrate seamlessly into your ATS.
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <a href="#!" class="btn btn-primary">Read More</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6 col-lg-6 col-sm-6 col-md-6">
+                        <img src="/static/img/3255337.jpg" class="img-fluid" />
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-6 col-lg-6 col-sm-6 col-md-6">
+                        <img src="/static/img/3156627.jpg" class="img-fluid" />
+                    </div>
+                    <div class="col-4 col-lg-4 col-sm-6 col-md-6 col-xs-6 justify-content-center">
+
+                        <h4 class="text-center p-3" id="bg-head-4">Nich&egrave; Grading System</h4>
+                        <hr class="my-0 c-line" />
+                        <div class="card-body text-body">
+
+                            <p class="card-text cust-card">
+                                getHyre relies on your domain specific KRA's to evaluate the candidate. The grading system is
+                                designed to include all the aspects of your day to day, giving you a birds-eye-view of a
+                                candidate's abilities
+                            </p>
+
+                        </div>
+                        <div class="text-center">
+                            <a href="#!" class="btn btn-primary text-center">Read More</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container col-12 mt-3 mb-3 p-5" id="pg4">
+                <div class="container">
+
+                    <h2 class="d-block text-center mt-2 mb-0 mb-3">
+                        Our Products
+                    </h2>
+                    <hr class="prod-h-line" />
+                    <div class="row justify-content-center mt-5">
+                        <div class="card-deck col-lg-8 col-md-12 col-xs-12 col-sm-12">
+                            <div class="card prod-card border-0 shadow">
+
+                                <div class="card-body">
+                                    <h2 class="card-title prod-title">
+                                        <span class="mr-5"><img class="img-thumbnail prod-icon border-0" src="/static/img/brain-1.png" /></span>Engage
+                                    </h2>
+                                    <hr class="prod-line" />
+                                    <p class="card-text p-3 prod-p">
+                                        Engage is an AI enabled virtual HR. It provides a comprehensive solution to your prehire processes,
+                                        onboarding and post hire support.
+                                    </p>
+                                </div>
+                                <div class="text-center mb-4">
+                                    <a href="#!" class="btn prod-btn shadow">Features</a>
+                                    <a href="#!" class="btn prod-btn shadow">Request a Demo</a>
+                                </div>
+                            </div>
+
+                            <div class="card prod-card border-0 shadow">
+
+                                <div class="card-body border-0">
+                                    <h2 class="card-title prod-title"><span class="mr-5"><img class="img-thumbnail prod-icon border-0" src="/static/img/innovation.png" /></span>Journy </h2>
+                                    <hr class="prod-line" />
+                                    <p class="card-text prod-p p-3">
+                                        Journy's is an AI powered conversational agent that facilitates role specific text based adventures.
+                                        Journy's lets you build on the existing hiring scenarios to customize and design your own.
+
+
+                                    </p>
+
+                                </div>
+                                <div class="text-center mb-4">
+                                    <a href="#!" class="btn shadow prod-btn">Features</a>
+                                    <a href="#!" class="btn shadow prod-btn">Request a Demo</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row my-5 justify-content-center">
+                        <div class="card-deck col-lg-4 col-md-8 col-xs-8 col-sm-8">
+
+                            <div class="card prod-card border-0 shadow">
+                                <div class="card-body">
+                                    <h3 class="card-title prod-title"><span class="mr-5"><img class="img-thumbnail prod-icon border-0" src="/static/img/signal.png" /></span>&Agrave;la </h3>
+                                    <hr class="prod-line" />
+                                    <p class="card-text prod-p p-3">
+                                        &Aacute;la is a voice based conversational agent helps recruiters grade
+                                        on factors including comprehension, speaking, pitch, tone and sentiment.
+                                        &Aacute;la is the perfect solution to hire and train for your client-facing roles
+                                    </p>
+                                    <p class="text-center mb-3">
+                                        <a href="#!" class="btn prod-btn shadow" id="prod-btn">Features</a>
+                                        <a href="#!" class="btn prod-btn shadow">Request a Demo</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-12 footer-style mb-0" id="footer">
+                <div class="container p-5">
+                    <div class="row">
+                        <div class="col-sm role col-md col-xs">
+                            <table class="table table-borderless text-white">
+                                <tr><th class="text-red border-bottom">Solutions by Role</th></tr>
+                                <tr><td><a href="engage.html" class="card-link" id="ft-nav">Business Development</a></td></tr>
+                                <tr><td><a href="engage.html" class="card-link">Sales</a></td></tr>
+                                <tr><td><a href="engage.html" class="card-link">Inside Sales</a></td></tr>
+                                <tr><td><a href="engage.html" class="card-link">Consulting</a></td></tr>
+                                <tr><td><a href="engage.html" class="card-link">Strategy</a></td></tr>
+                                <tr><td><a href="engage.html" class="card-link">Account Management</a></td></tr>
+                            </table>
+                        </div>
+                        <div class="col-sm col-md industry col-xs">
+                            <table class="table table-borderless text-white">
+                                <tr><th class="text-red border-bottom">Solutions by Industry</th></tr>
+                                <tr><td><a href="engage" class="card-link">Internet</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">IT</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">Advertising</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">BPO</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">Consulting</a></td></tr>
+                            </table>
+                        </div>
+
+
+                        <div class="col-sm col-md company col-xs">
+                            <table class="table table-borderless">
+                                <tr><th class="text-red border-bottom">Company</th></tr>
+                                <tr><td><a href="engage" class="card-link">About Us</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">Request a Demo</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">Partnership Program</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">Blog</a></td></tr>
+                                <tr><td><a href="engage" class="card-link">FAQ's</a></td></tr>
+                            </table>
+                        </div>
+                        <div class="col-sm col-md contact col-xs">
+                            <table class="table table-borderless">
+                                <tr><th class="text-red border-bottom">Contact</th></tr>
+                                <tr><td class="text-white"><span><i class="fas fa-phone mr-1"></i></span>+91 99587 24981</td></tr>
+                                <tr><td class="text-white"><span><i class="fas fa-at mr-1"></i></span>hello@gethyre.in</td></tr>
+                                <tr><td class="text-white"><span><i class="fas fa-location mr-1"></i></span>Hosted on the clouds of Google ;)</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </body>
+</htmxl>

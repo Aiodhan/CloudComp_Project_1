@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename="content/journy.css") }}" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" id="logo" href="{{ url_for('home') }}">
+
+                <span class="ml-3 font-weight-bold">get:Hyre</span>
+            </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbar4">
+                <ul class="navbar-nav mr-auto pl-lg-4">
+                    <li class="nav-item px-lg-2 active"> <a class="nav-link" href="{{ url_for('home') }}"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></i></span>About</a> </li>
+
+                    <li class="nav-item px-lg-2 dropdown d-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="d-inline-block d-lg-none icon-width"><i class="far fa-caret-square-down"></i></span>Products
+                            <!---<svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>-->
+                        </a>
+                        <div class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="{{ url_for('engage') }}">Engage</a>
+                            <a class="dropdown-item" href="{{ url_for('journy') }}">Journy</a>
+                            <a class="dropdown-item" href="{{ url_for('ala') }}">&Aacute;la</a>
+                        </div>
+                    </li>
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href="{{ url_for('blog') }}"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>Blog</a> </li>
+
+                    <li class="nav-item px-lg-2"> <a class="nav-link" href{{ url_for('contact') }}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-envelope"></i></span>Contact</a> </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="body-wrappercol-12 col-lg-12 col-md-12 col-xs-12 p-0"></div> 
+    <div class="container col-12 px-5 my-5" id="pg1">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row justify-content-center my-5">
+            <div class="col-4 mt-5 mb-5 pt-5" id="ehead">
+                <h1 class="text-center mb-5 head-j">Journy<span class="blinking-cursor">.</span></h1>
+                <hr class="homepage-line" />
+                <p class="lead text-center head-j-p">
+                    Journys is a conversational agent that facilitates theme specific text based adventures.
+                    With Journys you can customize your theme and let your potential hirees on an engaging hiring
+                    experience while evaluating them on the job.
+                </p>
+                <p class="text-center mt-5">
+                    <a href="#" class="btn btn-lg demo-j">Request a Demo</a>
+                </p>
+            </div>
+            <div class="col-6">
+                <img class="img-fluid" src="/static/img/29.jpg" />
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container col-12 mt-5 mb-5 p-5 bg-cust" id="pg2">
+
+        <div class="d-block text-center">
+            <h1 class="text-center cust-font">With Journy's you can ...</h1>
+            <hr class="line-pg2" />
+        </div>
+        <div class="container col-10 p-5 justify-content-center" id="jyus">
+
+            <div class="row justify-content-center">
+
+                <div class="col">
+                    <div class="card shadow p-3 mb-5">
+                        <div class="row">
+                            <h3 class="text-center col-8 c-head">Interview at Scale</h3>
+                            <span class="col"><img class="img-fluid" src="/static/img/process.png" /></span>
+                        </div>
+                        <hr />
+                        <div class="card-body pt-2 pb-2">
+
+                            <p class="card-text lead p-0">
+                                Shortlisting and interview hundreds of candidates for your niche roles can take up a lot of
+                                business hours.Journys conducts multiple conversations simultaneously while the algorithms search for your perfect fit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="ec3">
+                    <div class="card shadow p-3">
+                        <div class="row">
+                            <h3 class="text-center col-8 c-head">Design your hiring Scenarios</h3>
+                            <span class="col"><img class="img-fluid" src="/static/img/continuous.png" /></span>
+                        </div>
+                        <hr />
+                        <div class="card-body pt-2 pb-2">
+                            <p class="card-text lead p-0">
+                                Journys has an inbuilt best fit theme for every role. These themes are designed based on the day to day of that particular role.
+                                In addition to that you have the unique opportunity to customize these themes and the relevant metrics to suit your business needs
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="ec2">
+                    <div class="card shadow p-3">
+                        <div class="row">
+                            <h3 class="text-center col-8 c-head">Customize your metrics</h3>
+                            <span class="col"><img class="img-fluid" src="/static/img/mobile-app.png" /></span>
+                        </div>
+                        <hr />
+                        <div class="card-body pt-2 pb-2">
+                            <p class="card-text lead p-0">
+                                Every role is different. So is every company and its culture. While our default metrics are role and domain
+                                specific, you have ample scope to define your own to suit your culture and business neeeds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-4 col-sm-6" id="ec4">
+                    <div class="card shadow p-3">
+                        <div class="row">
+                            <h3 class="text-center col-8 c-head">Leverage on Journys Core</h3>
+                            <span class="col"><img class="img-fluid" src="/static/img/leader.png" /></span>
+                        </div>
+                        <hr />
+                        <div class="card-body pt-2 pb-2">
+                            <p class="card-text lead p-0">
+                                Journys trains on your domain specific conversations. Its algorithms further drill down on each segment to evaluate candidates on multiple fronts.
+                                The client dashboard enables you to select your domain themes, define your metrics and shortlisting criteria
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6" id="ec5">
+                    <div class="card shadow p-3">
+                        <div class="row">
+                            <h3 class="text-center col-8 c-head">Predict your agency cost</h3>
+                            <span class="col"><img class="img-fluid" src="/static/img/time.png" /></span>
+                        </div>
+                        <hr />
+                        <div class="card-body pt-2 pb-2">
+                            <p class="card-text lead p-0">
+                                Journys evaluates the conversations in conjunction with Engage's initital psychometric evaluation.
+                                The algorithms are then able to give you clear cost profile on your association together'
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container col-12 my-5 p-5" id="pg3">
+
+        <div class="d-block">
+            <h1 class="text-center cust-font border-bottom">How Does it Work ?</h1>
+            <h3 class="text-center cust-font-1 w-75 text-primary mx-auto">Journy's web dashboard makes customizing metrics and scenarios for your role easy and intuitive</h3>
+        </div>
+
+    </div>
+
+    <div class="container my-5 p-5" id="pg3">
+
+        <div class="row mt-5 ">
+            <div class="col-4 col-lg-4 col-sm-6 col-md-6">
+                <div class="row mr-0 mb-0">
+                    <div class="card-body justify-content-center">
+                        <h5><span class="badge badge-pill badge-success mr-1">1</span>Tell us about your role</h5>
+                        <hr class="line-style w-25 bg-success" id="line-1" />
+
+                    </div>
+                </div>
+                <div class="row mr-0 mb-0">
+                    <div class="card-body">
+                        <h5><span class="badge badge-pill badge-primary mr-1">2</span>Customize your hiring scenario</h5>
+                        <hr class="line-style" id="line-2" />
+                    </div>
+                </div>
+                <div class="row mr-0 mb-0">
+                    <div class="card-body ">
+                        <h5><span class="badge badge-pill badge-primary mr-1">3</span>Define your benchmarks</h5>
+                        <hr class="line-style" id="line-3" />
+
+                    </div>
+                </div>
+                <div class="row mr-0 mb-0">
+
+                    <div class="card-body" id="ft5">
+                        <h5><span class="badge badge-pill badge-primary mr-1">4</span>Real Time Analytics</h5>
+                        <hr class="line-style" id="line-4" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6 col-6 align-items-center">
+                <img class="img-fluid" src="#" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container my-5 p-5" id="jtheme">
+        <div class="d-block p-3">
+            <h1 class="text-center cust-font border-bottom">
+                There's a Journy planned for every role. Build on the <br />
+                existing Journy's to align with your business needs
+            </h1>
+        </div>
+        <div class="row mt-5">
+
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Allrounder</h4>
+
+                        <p class="card-text">
+                            This journy enables multiple discussions with a single client, from prospecting to closure.
+                            The journy kicks off at the first meeting and has a dynamic plot line which is dependant on the candidate.
+                            The candidate is then comprehensively evaluated for his overall sales ability
+                        </p>
+                        <p class="card-text">
+                            For roles: <span class="badge badge-pill badge-primary">Sales</span>
+                            <span class="badge badge-pill badge-primary">Business Development</span>
+                            <span class="badge badge-pill badge-primary">Partnerships</span>
+                            <span class="badge badge-pill badge-primary">Account Management</span>
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Advertising</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+                            <span class="badge badge-pill badge-primary">IT</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Prospector</h4>
+
+                        <p class="card-text">
+                            This theme enables one-off conversations with multiple clients in a particular domain.
+                            Every conversation is capped at 6-8 minutes, which depends on the candidate's conversational ability.
+                            In this Journy, the candidate is evaluated on introductions, pitches and prospceting skills.
+                        </p>
+                        <p class="card-text">
+                            For roles: <span class="badge badge-pill badge-primary">Sales</span>
+                            <span class="badge badge-pill badge-primary">Business Development</span>
+                            <span class="badge badge-pill badge-primary">Partnerships</span>
+                            <span class="badge badge-pill badge-primary">Account Management</span>
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Advertising</span>
+                            <span class="badge badge-pill badge-primary">Private Equity</span>
+                            <span class="badge badge-pill badge-primary">Banking</span>
+                            <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+                            <span class="badge badge-pill badge-primary">IT</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Upseller</h4>
+
+                        <p class="card-text">
+                            This journy happens between an onboarded client and the Territory Sales Manager.
+                            The Manager's objective is to improve his bottom line by upselling to his key primary customer.
+                            The candidate is evaluated on his ability to maintain his ongoing client
+                            relationship and to sell more products to the client.
+
+                        </p>
+                        <p class="card-text">
+                            For roles:
+                            <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Strategy</span>
+                            <span class="badge badge-pill badge-primary">Sales</span>
+                            <span class="badge badge-pill badge-primary">Business Development</span>
+                            <span class="badge badge-pill badge-primary">Partnerships</span>
+                            <span class="badge badge-pill badge-primary">Account Management</span>
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Advertising</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+                            <span class="badge badge-pill badge-primary">IT</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Consultant</h4>
+
+                        <p class="card-text">
+                            The journy is concerned with an associate of a top management consultant firm and his first client discussion.
+                            The candidate is evaluated on his problem solving skills, his client approach and his presentation
+
+                        </p>
+                        <p class="card-text">
+                            For roles:
+                            <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Strategy</span>
+
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Presenter</h4>
+
+                        <p class="card-text">
+                            The journy takes the hiree through 3-4 pitches in the same domain. The hiree
+                            is evaluated on his pitching skills and information presentation
+
+                        </p>
+                        <p class="card-text">
+                            For roles:
+                            <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Business Development</span>
+                            <span class="badge badge-pill badge-primary">Inside Sales</span>
+
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+                            <span class="badge badge-pill badge-primary">IT</span>
+                            <span class="badge badge-pill badge-primary">Advertising</span>
+                            <span class="badge badge-pill badge-primary">Insurance</span>
+                            <span class="badge badge-pill badge-primary">Private Equity</span>
+                            <span class="badge badge-pill badge-primary">Banking</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary text-red">Request a Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="/static/img/pathToYourImage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">The Closer</h4>
+
+                        <p class="card-text">
+                            The journy involves a team manager in the final stages of a deal closure.
+                            The hiree is presented with a gist of the past conversations and is then evaluated on his closing skills
+                        </p>
+                        <p class="card-text">
+                            For roles:
+                            <span class="badge badge-pill badge-primary">Partnerships</span>
+                            <span class="badge badge-pill badge-primary">Business Development</span>
+                            <span class="badge badge-pill badge-primary">Sales</span>
+
+                        </p>
+                        <p class="card-text">
+                            For domain: <span class="badge badge-pill badge-primary">Consulting</span>
+                            <span class="badge badge-pill badge-primary">Internet</span>
+                            <span class="badge badge-pill badge-primary">IT</span>
+                            <span class="badge badge-pill badge-primary">Advertising</span>
+                            <span class="badge badge-pill badge-primary">Insurance</span>
+                            <span class="badge badge-pill badge-primary">Private Equity</span>
+                            <span class="badge badge-pill badge-primary">Banking</span>
+
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#!" class="btn btn-primary">Request a Demo</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container col-12" id="faq">
+
+        <div class="d-block my-5"><h1></h1></div>
+        <div class="container pt-5 mt-5"><h1 class="text-center">FAQ'S</h1></div>
+
+        <div class="container col-8 justify-content-center my-5 pb-5" id="faq-e">
+
+            <div class="d-block text-align-left">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq1" aria-expanded="false" aria-controls="collapseExample">
+                        1.Which roles can I hire for with Journy ?
+
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq1">
+                    <div class="card card-body" id="faq1-p">
+                        Journy is the perfect solution for all your non-tech roles. 
+                        Customization is also feasible for your role, domain and company in particular.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq2" aria-expanded="false" aria-controls="collapseExample">
+                        2. How does Journy help me hire ?
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq2">
+                    <div class="card card-body">
+                        Journy's is a conversational AI and is trained on domain specific data. 
+                        It conducts multiple conversations with candidates based on the selected theme and hiring role. 
+                        It them evaluayes these conversations to arrive at various business critical performance metrics. 
+                        You can view the evaluation criteria here and the theme list here
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq3" aria-expanded="false" aria-controls="collapseExample">
+                        3. Can I customise Journy for my particular domain and role  ?
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq3">
+                    <div class="card card-body">
+                        There's is an inbuilt domain trained Journy for your non tech role. 
+                        You can build on the existing Journy to customise for your particular domain and company. 
+                        Customisation is subject to your pricing plan and is visible under the Journy's tab of your dashboard
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq4" aria-expanded="false" aria-controls="collapseExample">
+                        4. Can I also use Journy's to train my employees ?
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq4">
+                    <div class="card card-body">
+                        Yes. Journy's is an excellent tool for training your employees on your domain and the job. 
+                        Please write to us at journy@gethyre.in with your exact requirements
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq5" aria-expanded="false" aria-controls="collapseExample">
+                        5. How do I activate Journy's ?
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq5">
+                    <div class="card card-body border-0 border-top">
+                        On the confirmation of your payment, you will receive your login link and password for your dashboard. 
+                        You can add Journy's to your hiring blueprint in the dashboard.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq6" aria-expanded="false" aria-controls="collapseExample">
+                        6. Where is Journy's conducted?
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq6">
+                    <div class="card card-body border-0 border-top">
+                        Journy's sends out web links to candidates on WhatsApp. 
+                        The duration of each Journy varies between 15 min to 40 min based on your role and the progress 
+                        is visible in your web dashboard.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq7" aria-expanded="false" aria-controls="collapseExample">
+                        7. How does Journy's ensure an intelligent and responsive conversation ?
+
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq7">
+                    <div class="card card-body border-0 border-top">
+                        Journy's is built on state of the art NLP and NLG algorithms and is conversational in nature. Journy's is trained on domain specific data and is also responsive in accordance with the conversation. For instance in Journy which involves a conversation between a salesperson and a client, the client's response is dependent on the salesperson's conversation, negotiation and overall sentiment among other criteria. To view the full list of criteria click here.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq8" aria-expanded="false" aria-controls="collapseExample">
+                        8. Can I only purchase Journy's?
+
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq8">
+                    <div class="card card-body">
+
+                        Yes, you can. But we do encourage you to team it up with Engage for a comprehensive evaluation.
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block">
+                <p>
+                    <a class="btn btn-faq border-bottom" data-toggle="collapse" href="#faq9" aria-expanded="false" aria-controls="collapseExample">
+                        9.  Can I set my benchmarks to shortlist with Journy?
+
+                    </a>
+
+                </p>
+                <div class="collapse" id="faq9">
+                    <div class="card card-body">
+                        Yes, you can pre-set your benchmarks according to your relevant criteria. 
+                        Benchmarks are set on your dashboard and you can view the evaluation criteria here.
+
+                    </div>
+                </div>
+            </div>
+
+         
+
+        </div>
+    </div>
+
+
+
+    <div class="container col-12 footer-style mt-5 mb-0" id="footer">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-sm role col-md col-xs">
+                    <table class="table table-borderless text-white">
+                        <tr><th class="text-red border-bottom">Solutions by Role</th></tr>
+                        <tr><td><a href="engage.html" class="card-link" id="ft-nav">Business Development</a></td></tr>
+                        <tr><td><a href="engage.html" class="card-link">Sales</a></td></tr>
+                        <tr><td><a href="engage.html" class="card-link">Inside Sales</a></td></tr>
+                        <tr><td><a href="engage.html" class="card-link">Consulting</a></td></tr>
+                        <tr><td><a href="engage.html" class="card-link">Strategy</a></td></tr>
+                        <tr><td><a href="engage.html" class="card-link">Account Management</a></td></tr>
+                    </table>
+                </div>
+                <div class="col-sm col-md industry col-xs">
+                    <table class="table table-borderless text-white">
+                        <tr><th class="text-red border-bottom">Solutions by Industry</th></tr>
+                        <tr><td><a href="engage" class="card-link">Internet</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">IT</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">Advertising</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">BPO</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">Consulting</a></td></tr>
+                    </table>
+                </div>
+
+
+                <div class="col-sm col-md company col-xs">
+                    <table class="table table-borderless">
+                        <tr><th class="text-red border-bottom">Company</th></tr>
+                        <tr><td><a href="engage" class="card-link">About Us</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">Request a Demo</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">Partnership Program</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">Blog</a></td></tr>
+                        <tr><td><a href="engage" class="card-link">FAQ's</a></td></tr>
+                    </table>
+                </div>
+                <div class="col-sm col-md contact col-xs">
+                    <table class="table table-borderless">
+                        <tr><th class="text-red border-bottom">Contact</th></tr>
+                        <tr><td class="text-white"><span><i class="fas fa-phone mr-1"></i></span>+91 99587 24981</td></tr>
+                        <tr><td class="text-white"><span><i class="fas fa-at mr-1"></i></span>hello@gethyre.in</td></tr>
+                        <tr><td class="text-white"><span><i class="fas fa-location mr-1"></i></span>Hosted on the clouds of Google ;)</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
