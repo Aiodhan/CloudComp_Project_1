@@ -13,18 +13,51 @@
 # limitations under the License.
 
 # [START gae_python37_app]
-from flask import Flask
-
+from flask import Flask, render_template, redirect, request, url_for
+from datetime import datetime
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
 
 
+
+
 @app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'This is your web app! Let\'s get going!'
+@app.route('/home')
+def home():
+    """Renders the home page."""
+    return render_template('layout.html')
+
+@app.route("/engage", methods=["GET","POST"])
+def engage():
+    """Renders the contact page."""
+    return render_template("engage.html")
+
+@app.route('/journy',methods=["GET","POST"])
+def journy():
+    """Renders the about page."""
+    return render_template('journy.html'  )
+
+@app.route('/ala',methods=["GET","POST"])
+def ala():
+    """Renders the about page."""
+    return render_template('ala.html')
+
+@app.route('/blog',methods=["GET","POST"])
+def blog():
+    """Renders the about page."""
+    return render_template('blog.html')
+
+@app.route('/contact',methods=["GET","POST"])
+def contact():
+    """Renders the about page."""
+    return render_template('contact.html')
+
+@app.route('/about',methods=["GET","POST"])
+def about():
+    """Renders the about page."""
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
