@@ -1,0 +1,154 @@
+﻿body
+{
+    margin:0;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+/* Font Awesome Icons have variable width. Added fixed width to fix that.*/
+.icon-width {
+    width: 2rem;
+}
+
+#logo {
+    margin-left: 10%;
+    margin-right: 30%;
+    font-family: 'Work Sans',sans-serif;
+    font-weight: 800;
+}
+
+.head-j {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    color: #055341;
+}
+
+.head-j-p {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: rgba(0,0,0,0.85);
+}
+
+.homepage-line {
+    width: 28rem;
+    height: 0.04rem;
+    background-color: #FF5733;
+}
+
+.text-red {
+    color: #FF5733;
+}
+
+
+.btn.btn-lg.demo-j {
+    border: 1px solid rgba(194, 76, 67, 0.85);
+    background-color: rgba(194, 76, 67, 0.85);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    color: #ffffff;
+}
+
+    .btn.btn-lg.demo-j:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+    }
+
+
+
+.cust-font {
+    font-family: 'Open Sans',sans-serif;
+    
+    font-weight: 400;
+    color: rgba(0,0,0,0.80); 
+
+}
+
+.cust-font-1 {
+    font-family: 'Roboto',sans-serif;
+    
+    font-weight: 300;
+    
+}
+
+
+.line-pg2 {
+    background-color: rgba(255, 0, 0, 0.80);
+    height: 0.06rem;
+    width:20rem;
+    font-weight: 400;
+}
+
+.bg-cust {
+    background-color: #FAFAFA;
+}
+
+.text-red {
+    color: #c24c43;
+    font-size: 1.4rem;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 300;
+}
+
+.c-head {
+    color: rgba(229, 57, 53, 0.85);
+}
+
+.card {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.foot-nav {
+    color: white;
+    font-family: 'Open Sans',sans-serif;
+    background-color: #424242;
+}
+
+
+
+.card-link {
+    color: rgba(255, 255, 255, 0.90);
+}
+
+    .card-link:hover {
+        color: #0075B0;
+    }
+
+#empty {
+    height: 20vh;
+}
+
+
+
+
+.btn.btn-faq:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.btn.btn-faq:hover {
+    outline: none;
+    border: none;
+    color: #f44c5a;
+    box-shadow:none;
+}
+
+.collapse {
+    border:none;
+    background-color: transparent;
+    
+}
+
+
+
+#footer {
+    background-color: #263238;
+    color: black;
+    height: 70vh;
+    z-index: 15;
+}

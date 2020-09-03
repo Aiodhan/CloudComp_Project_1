@@ -1,0 +1,190 @@
+﻿html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width:100%;
+}
+
+#footer {
+    
+    
+    background-color: #263238;
+    color: black;
+    height: 70vh;
+    z-index: 15;
+}
+
+.body-content {
+    padding:0px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+/* Font Awesome Icons have variable width. Added fixed width to fix that.*/
+.icon-width {
+    width: 2rem;
+}
+
+#logo {
+    margin-left: 10%;
+    margin-right: 30%;
+    font-family: 'Work Sans',sans-serif;
+    font-weight: 800;
+}
+
+.head-e {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.90);
+}
+
+.head-e-p {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.85);
+}
+
+.homepage-line {
+    width: 28rem;
+    height: 0.04rem;
+    background-color: #FF5733;
+}
+
+.text-red {
+    color: #FF5733;
+}
+
+.text-blue {
+    color: #004D40;
+}
+
+.text-cyan {
+    color: #512DA8;
+}
+
+.rounded.mx-auto.d-block {
+    width:120px;
+    height:120px;
+}
+
+
+
+#pg1 {
+    background-image: url("/static/img/4013677.svg") !important;
+    height: 110vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+.cust-text {
+    color: rgba(0,0,0,0.85);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+}
+
+
+
+.text-d-2 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+#pg2, #pg4, #pg6 {
+    background-color: #FAFAFA;
+}
+
+.line-1 {
+    width: 6rem;
+    height: 3px;
+    background-color: #FF5733;
+}
+
+.tc-h {
+    font-family: 'Roboto',sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #7209b7;
+}
+
+.foot-nav {
+    color: white;
+    font-family: 'Open Sans',sans-serif;
+    background-color: #424242;
+}
+
+
+
+.card-link {
+    color: rgba(255, 255, 255, 0.90);
+}
+
+    .card-link:hover {
+        color: #0075B0;
+    }
+
+#empty {
+    height:20vh;
+}
+
+.btn.btn-lg.demo-e {
+    border: 1px solid rgba(194, 76, 67, 0.85);
+    background-color: rgba(194, 76, 67, 0.85);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    color: #ffffff;
+}
+
+    .btn.btn-lg.demo-e:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+    }
+
+.text-red-foot-nav {
+    color: #c24c43;
+    font-size: 1.4rem;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 300;
+}
+
+.text-body-color {
+    
+    color: rgba(0,0,0,0.25);
+}
+
+.btn.btn-faq:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.btn.btn-faq:hover {
+    outline: none;
+    border: none;
+    color: #f44c5a;
+    box-shadow: none;
+}
+
+#faq1 {
+    border: none;
+    background-color: transparent;
+}
+
+.video {
+    width:20vw;
+    
+}
